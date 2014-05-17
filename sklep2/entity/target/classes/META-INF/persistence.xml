@@ -6,6 +6,8 @@
 	<persistence-unit name="postgres" transaction-type="JTA">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<jta-data-source>jdbc/spio</jta-data-source>
+		<class>pl.spio.ecommerce.account.Group</class>
+		<class>pl.spio.ecommerce.account.User</class>
 		<properties>
 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
 			<property name="eclipselink.logging.logger" value="ServerLogger" />
