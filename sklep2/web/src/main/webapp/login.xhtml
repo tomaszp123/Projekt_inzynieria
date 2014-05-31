@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view>
+	<h:body>
+		<ui:composition template="/templates/layout.xhtml">
+			<ui:define name="content">
+				<h:form id="loginForm">
+					<h:panelGrid id="grid" columns="1">
+						<h:panelGroup>
+							<h:outputLabel value="#{msg['username']}" for="username" />
+							<h:inputText id="username" value="#{sessionBean.username}"
+								required="true" />
+							<h:message for="username" />
+						</h:panelGroup>
+						<h:panelGroup>
+							<h:outputLabel value="#{msg['password']}" for="password" />
+							<h:inputSecret id="password" value="#{sessionBean.password}"
+								required="true" />
+							<h:message for="password" />
+						</h:panelGroup>
+						<h:panelGroup>
+							<h:commandButton action="#{sessionBean.login}"
+								value="#{msg['login']}" />
+						</h:panelGroup>
+					</h:panelGrid>
+				</h:form>
+			</ui:define>
+		</ui:composition>
+	</h:body>
+</f:view>
+</html>
