@@ -1,8 +1,10 @@
+package pl.spio.ecommerce.account;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
-import pl.spio.ecommerce.account.UserController;
+
 
 @Stateless
 public class UserControllerBean implements UserController{
