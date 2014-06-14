@@ -10,14 +10,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "USERS", schema = "public")
-@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"
-)
+@NamedQueries({
+@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username = :username"),
+@NamedQuery(name = "User.findAllUsers", query = "SELECT u FROM User u"),
+@NamedQuery(name = "User.deleteUser", query = "DELETE FROM User u WHERE u.id = :userIdToRemove")
+})
 public class User implements Serializable {
 	@Id
 	@SequenceGenerator(name = "usrSeqGen", sequenceName = "USR_ID_SEQ")

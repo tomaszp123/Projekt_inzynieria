@@ -3,6 +3,7 @@
     <wb-module deploy-name="sklep2-business">
         <wb-resource deploy-path="/" source-path="/src/main/resources" tag="defaultRootSource"/>
         <wb-resource deploy-path="/" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/" source-path="/src/main/java"/>
         <property name="java-output-path" value="/sklep2-business/target/classes"/>
     </wb-module>
 </project-modules>
