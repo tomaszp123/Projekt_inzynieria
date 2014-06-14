@@ -11,11 +11,26 @@
 	<ui:composition>
 		<h:panelGroup class="page-header" layout="block">
 			<h:form rendered="#{sessionBean.isUserLoggedIn()}">
-				<h:commandButton value="#{msg['logout']}"
-					action="#{sessionBean.logout}" />
+				<rich:toolbar>
+					<rich:dropDownMenu>
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:outputText value="#{msg['management.management']}" />
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuItem label="#{msg['management.user.management']}"
+							action="#{menuBean.userManagement()}" />
+						<rich:menuItem label="#{msg['management.product.management']}"
+							action="#{menuBean.productManagement()}" />
+					</rich:dropDownMenu>
+					<rich:toolbarGroup location="right">
+						<h:commandLink action="#{sessionBean.logout()}"
+							value="#{msg['logout']}" />
+					</rich:toolbarGroup>
+				</rich:toolbar>
 			</h:form>
-/ jakieś sterowanie /
-</h:panelGroup>
+			/ jakieś sterowanie /
+		</h:panelGroup>
 	</ui:composition>
 </body>
 </html>
